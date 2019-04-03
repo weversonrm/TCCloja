@@ -1,5 +1,16 @@
 <template>
-    <v-layout align-center justify-center row fill-height>
+  <div>
+  <v-toolbar>
+    <v-toolbar-side-icon></v-toolbar-side-icon>
+    <v-toolbar-title>Title</v-toolbar-title>
+    <v-spacer></v-spacer>
+    <v-toolbar-items class="hidden-sm-and-down">
+      <v-btn flat>Link One</v-btn>
+      <v-btn flat>Link Two</v-btn>
+      <v-btn flat>Link Three</v-btn>
+    </v-toolbar-items>
+  </v-toolbar>
+  <v-layout align-center justify-center row fill-height mt-5>
             <v-form
             ref="form"
             v-model="valid"
@@ -56,6 +67,7 @@
             </v-btn>
           </v-form>
     </v-layout>
+    </div>
 </template>
 <script>
         export default {
