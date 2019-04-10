@@ -1,71 +1,96 @@
 <template>
-  <div>
-  <v-toolbar>
+<div>
+    <v-toolbar>
     <v-toolbar-side-icon></v-toolbar-side-icon>
-    <v-toolbar-title>Title</v-toolbar-title>
+    <v-toolbar-title>KIT-KETY</v-toolbar-title>
     <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-sm-and-down">
-      <v-btn flat>Link One</v-btn>
-      <v-btn flat>Link Two</v-btn>
+      <v-btn flat>
+        <v-badge
+          v-model="show"
+          color="purple"
+        >
+        <template v-slot:badge>
+            <span>6</span>
+          </template>
+          <v-icon
+            large
+            color="grey lighten-1"
+          >shopping_cart</v-icon>
+        </v-badge>
+      </v-btn>
+      <v-btn flat>
+        <v-badge
+          v-model="show"
+          color="cyan"
+        >
+        <template v-slot:badge>
+            <span>5</span>
+        </template>
+          <v-icon large color="grey">mail</v-icon>
+        </v-badge>
+      </v-btn>
+      <v-btn flat >
+        <v-icon>favorite</v-icon>
+      </v-btn>
+      <v-btn flat>
+        <v-badge
+      color="purple"
+      left
+      overlap
+    >
+      <template v-slot:badge>
+        <v-icon
+          dark
+          small
+        >
+          done
+        </v-icon>
+      </template>
+      <v-icon
+        color="grey lighten-1"
+        large
+      >
+        account_circle
+      </v-icon>
+    </v-badge>
+      </v-btn>
       <v-btn flat>Link Three</v-btn>
     </v-toolbar-items>
   </v-toolbar>
-  <v-layout align-center justify-center row fill-height mt-5>
-            <v-form
-            ref="form"
-            v-model="valid"
-            lazy-validation
-          >
-            <v-text-field
-              v-model="name"
-              :counter="10"
-              :rules="nameRules"
-              label="Name"
-              required
-            ></v-text-field>
+  <v-layout align-center justify-center row fill-height mt-5 wrap>
+    <v-flex xs4 class="display-2 text-xs-center black--text elevation-2 pa-3">
+      entrar/registrar
+
+    <v-form
+    ref="form"
+    v-model="valid"
+    >
+    <v-text-field
+    v-model="name"
+    :counter="10"
+    :rules="nameRules"
+    label="Name"
+    required
+    ></v-text-field>
         
-            <v-text-field
-              v-model="email"
-              :rules="emailRules"
-              label="E-mail"
-              required
-            ></v-text-field>
-            <v-text-field
-              v-model="senha"
-              label="senha"
-              type="password"
-              required
-            ></v-text-field>
-    
-            <v-checkbox
-              v-model="checkbox"
-              :rules="[v => !!v || 'You must agree to continue!']"
-              label="Do you agree?"
-              required
-            ></v-checkbox>
-        
-            <v-btn
-              :disabled="!valid"
-              color="success"
-              @click="validate"
-            >
-              Validate
-            </v-btn>
-        
-            <v-btn
-              color="error"
-              @click="reset"
-            >
-              Reset Form
-            </v-btn>
-        
-            <v-btn
-              color="warning"
-              @click="resetValidation"
-            >
-              Reset Validation
-            </v-btn>
-          </v-form>
+    <v-text-field
+    v-model="email"
+    :rules="emailRules"
+    label="E-mail"
+    required
+    ></v-text-field>
+    <v-text-field
+    v-model="senha"
+    label="senha"
+    type="password"
+    required
+    ></v-text-field>
+    <v-btn block color="secondary" dark>
+      Cadastrar
+    </v-btn>
+    </v-form>
+    </v-flex>
     </v-layout>
     </div>
 </template>
