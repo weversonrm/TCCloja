@@ -10,9 +10,7 @@
           v-model="show"
           color="purple"
         >
-        <template v-slot:badge>
-            <span>6</span>
-          </template>
+
           <v-icon
             large
             color="grey lighten-1"
@@ -24,13 +22,10 @@
           v-model="show"
           color="cyan"
         >
-        <template v-slot:badge>
-            <span>5</span>
-        </template>
           <v-icon large color="grey">mail</v-icon>
         </v-badge>
       </v-btn>
-      <v-btn flat >
+      <v-btn flat>
         <v-icon>favorite</v-icon>
       </v-btn>
       <v-btn flat>
@@ -39,14 +34,7 @@
       left
       overlap
     >
-      <template v-slot:badge>
-        <v-icon
-          dark
-          small
-        >
-          done
-        </v-icon>
-      </template>
+
       <v-icon
         color="grey lighten-1"
         large
@@ -86,7 +74,7 @@
     type="password"
     required
     ></v-text-field>
-    <v-btn block color="secondary" dark>
+    <v-btn block color="secondary" dark to="/inicio">
       Cadastrar
     </v-btn>
     </v-form>

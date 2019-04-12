@@ -11,7 +11,7 @@
           color="purple"
         >
         <template v-slot:badge>
-            <span>6</span>
+            <span></span>
           </template>
           <v-icon
             large
@@ -25,20 +25,22 @@
           color="cyan"
         >
         <template v-slot:badge>
-            <span>5</span>
+            <span></span>
         </template>
           <v-icon large color="grey">mail</v-icon>
         </v-badge>
       </v-btn>
-      <v-btn flat >
+      <v-btn flat color="grey darken-1">
         <v-icon>favorite</v-icon>
       </v-btn>
+      
       <v-btn flat>
         <v-badge
       color="purple"
       left
       overlap
     >
+    
       <template v-slot:badge>
         <v-icon
           dark
@@ -47,12 +49,15 @@
           done
         </v-icon>
       </template>
+      <router-link to="/login">
       <v-icon
         color="grey lighten-1"
         large
+    
       >
         account_circle
       </v-icon>
+    </router-link>
     </v-badge>
       </v-btn>
       <v-btn flat>Link Three</v-btn>
@@ -76,7 +81,7 @@
     >
       <v-img
         :aspect-ratio="16/9"
-        src="https://cdn.vuetifyjs.com/images/cards/kitchen.png"
+        src="https://www.wefashiontrends.com/wp-content/uploads/2013/01/como-usar-roupa-de-couro-no-ver%C3%A3o.jpg"
       >
         <v-expand-transition>
           <div
@@ -174,7 +179,7 @@
     >
       <v-img
         :aspect-ratio="16/9"
-        src="../assets/sla.jpg"
+        src="https://img.olx.com.br/images/24/245820098984955.jpg"
       >
         <v-expand-transition>
           <div
@@ -234,16 +239,16 @@
         show: true,
         items: [
           {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg'
+            src: 'https://pbs.twimg.com/media/C4tkP6MW8AANyHo.jpg'
           },
           {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg'
+            src: 'http://bloganddroz.com.br/wp-content/uploads/2017/01/fd66d3_9979c4f708ea4d9d80014ce41f83c20f.jpg'
           },
           {
             src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg'
           },
           {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg'
+            src: 'https://pbs.twimg.com/media/C4fk4MwWMAE0aw2.jpg'
           }
         ]
       }
