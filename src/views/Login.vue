@@ -2,7 +2,7 @@
 <div>
     <v-toolbar>
     <v-toolbar-side-icon></v-toolbar-side-icon>
-    <v-toolbar-title>KIT-KETY</v-toolbar-title>
+    <v-toolbar-title>TINO STYLE'S</v-toolbar-title>
     <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-sm-and-down">
       <v-btn flat>
@@ -12,7 +12,6 @@
         >
 
           <v-icon
-            large
             color="grey lighten-1"
           >shopping_cart</v-icon>
         </v-badge>
@@ -22,7 +21,7 @@
           v-model="show"
           color="cyan"
         >
-          <v-icon large color="grey">mail</v-icon>
+          <v-icon color="grey">mail</v-icon>
         </v-badge>
       </v-btn>
       <v-btn flat>
@@ -37,7 +36,6 @@
 
       <v-icon
         color="grey lighten-1"
-        large
       >
         account_circle
       </v-icon>
@@ -46,8 +44,8 @@
       <v-btn flat>Link Three</v-btn>
     </v-toolbar-items>
   </v-toolbar>
-  <v-layout align-center justify-center row fill-height mt-5 wrap>
-    <v-flex xs4 class="display-2 text-xs-center black--text elevation-2 pa-3">
+  <v-layout align-center justify-center row fill-height mt-5 >
+    <v-flex xs4 class="display-2 text-xs-center black--text pa-3">
       entrar/registrar
 
     <v-form
@@ -75,7 +73,7 @@
     required
     ></v-text-field>
     <v-btn block color="secondary" dark to="/inicio">
-      Cadastrar
+      Registrar
     </v-btn>
     </v-form>
     </v-flex>

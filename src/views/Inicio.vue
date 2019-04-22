@@ -6,41 +6,25 @@
     <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-sm-and-down">
       <v-btn flat>
-        <v-badge
-          v-model="show"
-          color="purple"
-        >
         <template v-slot:badge>
             <span></span>
           </template>
           <v-icon
-            large
+          
             color="grey lighten-1"
           >shopping_cart</v-icon>
-        </v-badge>
       </v-btn>
       <v-btn flat>
-        <v-badge
-          v-model="show"
-          color="cyan"
-        >
         <template v-slot:badge>
             <span></span>
         </template>
-          <v-icon large color="grey">mail</v-icon>
-        </v-badge>
+          <v-icon color="grey">mail</v-icon>
       </v-btn>
       <v-btn flat color="grey darken-1">
         <v-icon>favorite</v-icon>
       </v-btn>
       
       <v-btn flat>
-        <v-badge
-      color="purple"
-      left
-      overlap
-    >
-    
       <template v-slot:badge>
         <v-icon
           dark
@@ -52,13 +36,11 @@
       <router-link to="/login">
       <v-icon
         color="grey lighten-1"
-        large
     
       >
         account_circle
       </v-icon>
     </router-link>
-    </v-badge>
       </v-btn>
       <v-btn flat>Link Three</v-btn>
     </v-toolbar-items>
@@ -86,7 +68,7 @@
         <v-expand-transition>
           <div
             v-if="hover"
-            class="d-flex transition-fast-in-fast-out orange darken-2 v-card--reveal display-3 white--text"
+            class="d-flex transition-fast-in-fast-out orange darken-2 v-card--reveal display-1 white--text"
             style="height: 100%;"
           >
             $14.99
@@ -99,7 +81,6 @@
       >
         <v-btn
           absolute
-          color="orange"
           class="white--text"
           fab
           large
@@ -113,7 +94,7 @@
           <v-icon>mdi-cart</v-icon>
         </v-btn>
         <div class="font-weight-light grey--text title mb-2">alguma coisa</div>
-        <h3 class="display-1 font-weight-light orange--text mb-2">roupa</h3>
+        <h3 class="display-1 font-weight-light black--text mb-2">roupa</h3>
         <div class="font-weight-light title mb-2">
           frase de impacto<br>
           made in china
@@ -130,7 +111,7 @@
     >
       <v-img
         :aspect-ratio="16/9"
-        src="https://cdn.vuetifyjs.com/images/cards/kitchen.png"
+        src="https://static.zara.net/photos///2019/W/0/1/p/5216/050/400/2/w/1024/5216050400_9_1_1.jpg?ts=1554314196338"
       >
         <v-expand-transition>
           <div
@@ -148,7 +129,6 @@
       >
         <v-btn
           absolute
-          color="orange"
           class="white--text"
           fab
           large
@@ -162,7 +142,7 @@
           <v-icon>mdi-cart</v-icon>
         </v-btn>
         <div class="font-weight-light grey--text title mb-2">alguma coisa</div>
-        <h3 class="display-1 font-weight-light orange--text mb-2">roupa</h3>
+        <h3 class="display-1 font-weight-light black--text mb-2">roupa</h3>
         <div class="font-weight-light title mb-2">
           frase de impacto<br>
           made in china
@@ -179,7 +159,7 @@
     >
       <v-img
         :aspect-ratio="16/9"
-        src="https://img.olx.com.br/images/24/245820098984955.jpg"
+        src="https://i0.wp.com/thegreenestpost.com/wp-content/uploads/2017/01/marca-de-roupa-e-sapatos-traz-para-o-mercado-produtos-100-veganos.jpeg?fit=800%2C533&ssl=1"
       >
         <v-expand-transition>
           <div
@@ -197,7 +177,6 @@
       >
         <v-btn
           absolute
-          color="orange"
           class="white--text"
           fab
           large
@@ -211,7 +190,7 @@
           <v-icon>mdi-cart</v-icon>
         </v-btn>
         <div class="font-weight-light grey--text title mb-2">alguma coisa</div>
-        <h3 class="display-1 font-weight-light orange--text mb-2">roupa</h3>
+        <h3 class="display-1 font-weight-light black--text mb-2">roupa</h3>
         <div class="font-weight-light title mb-2">
           frase de impacto<br>
           made in china
@@ -239,16 +218,16 @@
         show: true,
         items: [
           {
-            src: 'https://pbs.twimg.com/media/C4tkP6MW8AANyHo.jpg'
+            src: 'http://1.bp.blogspot.com/-QVgjKBbi_wc/UDjpOvXBXwI/AAAAAAAAAws/w4HJrWUPPGw/s1600/viagem+11.jpg'
           },
           {
-            src: 'http://bloganddroz.com.br/wp-content/uploads/2017/01/fd66d3_9979c4f708ea4d9d80014ce41f83c20f.jpg'
+            src: 'https://vivagreen.com.br/wp-content/uploads/2016/08/tecidos-veganos-e1471951879868.jpg'
           },
           {
-            src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg'
+            src: 'https://www.simbiotico.eco/wp-content/uploads/sv-eco-clothing.jpg'
           },
           {
-            src: 'https://pbs.twimg.com/media/C4fk4MwWMAE0aw2.jpg'
+            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKoIJrAFrWhYCVdkqBtFATzHX8Gmkt-yl1rWAx1Q9ewawoAF3q'
           }
         ]
       }
