@@ -42,7 +42,10 @@
       </v-icon>
     </router-link>
       </v-btn>
-      <v-btn flat>Link Three</v-btn>
+      <v-btn icon>
+        <v-icon>search</v-icon>
+      </v-btn>
+      
     </v-toolbar-items>
   </v-toolbar>
     <v-carousel hide-delimiters>

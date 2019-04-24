@@ -24,7 +24,7 @@
           <v-icon color="grey">mail</v-icon>
         </v-badge>
       </v-btn>
-      <v-btn flat>
+      <v-btn flat color="grey darken-1">
         <v-icon>favorite</v-icon>
       </v-btn>
       <v-btn flat>
@@ -41,7 +41,9 @@
       </v-icon>
     </v-badge>
       </v-btn>
-      <v-btn flat>Link Three</v-btn>
+      <v-btn icon>
+        <v-icon>search</v-icon>
+      </v-btn>
     </v-toolbar-items>
   </v-toolbar>
   <v-layout align-center justify-center row fill-height mt-5 >
