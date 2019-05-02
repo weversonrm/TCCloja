@@ -10,7 +10,6 @@
             <span></span>
           </template>
           <v-icon
-          
             color="grey lighten-1"
           >shopping_cart</v-icon>
       </v-btn>
@@ -204,6 +203,7 @@
   </v-layout>
 </div>
 </template>
+
 <style>
 .v-card--reveal {
   align-items: center;
