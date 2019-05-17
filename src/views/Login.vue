@@ -33,16 +33,12 @@
       left
       overlap
     >
-
       <v-icon
         color="grey lighten-1"
       >
         account_circle
       </v-icon>
     </v-badge>
-      </v-btn>
-      <v-btn icon>
-        <v-icon>search</v-icon>
       </v-btn>
     </v-toolbar-items>
   </v-toolbar>
