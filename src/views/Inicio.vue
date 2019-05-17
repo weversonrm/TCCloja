@@ -158,7 +158,7 @@
             informacao: "Cor azul"
           },
           {
-            src: 'https://vivagreen.com.br/wp-content/uploads/2016/08/tecidos-veganos-e1471951879868.jpg',
+            src: 'https://www.king55.com.br/estatico/king/images/temp/900_18636.jpeg',
             preco: "R$ 70,00",
             descricao: "Camiseta Gola V",
             marca: "Townley",
