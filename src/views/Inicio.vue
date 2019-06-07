@@ -2,7 +2,7 @@
 <div>
   <v-toolbar>
     <v-toolbar-side-icon></v-toolbar-side-icon>
-    <v-toolbar-title>KIT-KETY</v-toolbar-title>
+    <v-toolbar-title>Sunlight and Vegan</v-toolbar-title>
     <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-sm-and-down">
 
