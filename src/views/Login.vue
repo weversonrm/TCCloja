@@ -5,63 +5,19 @@
     <v-toolbar-title>TINO STYLE'S</v-toolbar-title>
     <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-sm-and-down">
-      <v-btn flat>
-        <v-badge
-          v-model="show"
-          color="purple"
-        >
-
-          <v-icon
-            color="grey lighten-1"
-          >shopping_cart</v-icon>
-        </v-badge>
-      </v-btn>
-      <v-btn flat>
-        <v-badge
-          v-model="show"
-          color="cyan"
-        >
-          <v-icon color="grey">mail</v-icon>
-        </v-badge>
-      </v-btn>
-      <v-btn flat color="grey darken-1">
-        <v-icon>favorite</v-icon>
-      </v-btn>
-      <v-btn flat>
-        <v-badge
-      color="purple"
-      left
-      overlap
-    >
-      <v-icon
-        color="grey lighten-1"
-      >
-        account_circle
-      </v-icon>
-    </v-badge>
-      </v-btn>
     </v-toolbar-items>
   </v-toolbar>
   <v-layout align-center justify-center row fill-height mt-5 >
     <v-flex xs4 class="display-2 text-xs-center black--text pa-3">
-      entrar/registrar
-
+      Entrar
     <v-form
     ref="form"
     v-model="valid"
-    >
-    <v-text-field
-    v-model="name"
-    :counter="10"
-    :rules="nameRules"
-    label="Name"
-    required
-    ></v-text-field>
-        
+    >      
     <v-text-field
     v-model="email"
     :rules="emailRules"
-    label="E-mail"
+    label="E-mail ou Nome"
     required
     ></v-text-field>
     <v-text-field
@@ -71,7 +27,10 @@
     required
     ></v-text-field>
     <v-btn block color="secondary" dark to="/inicio">
-      Registrar
+      Entrar
+    </v-btn>
+    <v-btn block color="secondary" dark to="/cadastro">
+      Cadastrar
     </v-btn>
     </v-form>
     </v-flex>
