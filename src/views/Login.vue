@@ -1,12 +1,14 @@
 <template>
 <div>
-    <v-toolbar>
-    <v-toolbar-side-icon></v-toolbar-side-icon>
-    <v-toolbar-title>TINO STYLE'S</v-toolbar-title>
-    <v-spacer></v-spacer>
-    <v-toolbar-items class="hidden-sm-and-down">
-    </v-toolbar-items>
-  </v-toolbar>
+  <v-toolbar
+      dark
+      prominent
+      src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
+    >
+      <v-app-bar-nav-icon></v-app-bar-nav-icon>
+      <v-toolbar-title>Loja</v-toolbar-title>
+      <v-spacer></v-spacer>
+    </v-toolbar>
   <v-layout align-center justify-center row fill-height mt-5 >
     <v-flex xs4 class="display-2 text-xs-center black--text pa-3">
       Entrar
@@ -22,14 +24,14 @@
     ></v-text-field>
     <v-text-field
     v-model="senha"
-    label="senha"
+    label="Senha"
     type="password"
     required
     ></v-text-field>
     <v-btn block color="secondary" dark to="/inicio">
       Entrar
     </v-btn>
-    <v-btn block color="secondary" dark to="/cadastro">
+    <v-btn rounded color="secondary" dark to="/cadastro">
       Cadastrar
     </v-btn>
     </v-form>
@@ -41,11 +43,6 @@
         export default {
           data: () => ({
             valid: true,
-            name: '',
-            nameRules: [
-              v => !!v || 'Name is required',
-              v => (v && v.length <= 10) || 'Name must be less than 10 characters'
-            ],
             email: '',
             emailRules: [
               v => !!v || 'E-mail is required',

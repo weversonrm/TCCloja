@@ -5,7 +5,6 @@
     <v-toolbar-title>Sunlight and Vegan</v-toolbar-title>
     <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-sm-and-down">
-
       <v-btn flat>
         <template v-slot:badge>
             <span></span>
@@ -14,11 +13,10 @@
             color="grey lighten-1"
           >shopping_cart</v-icon>
       </v-btn>
-      <v-btn flat color="grey darken-1">
-        <v-icon>favorite</v-icon>
-      </v-btn>
-      
-      <v-btn flat>
+        <router-link to="/acessorios">
+          <v-chip>Acessorios</v-chip>
+        </router-link>
+     <v-btn flat>
       <template v-slot:badge>
         <v-icon
           dark
@@ -27,6 +25,7 @@
           done
         </v-icon>
       </template>
+        
       <router-link to="/login">
       <v-icon
         color="grey lighten-1"
@@ -89,6 +88,7 @@
               <v-icon
                 large
                 color="grey lighten-1"
+                to="/"
               >shopping_cart</v-icon>
               <v-icon>mdi-cart</v-icon>
             </v-btn>

@@ -4,6 +4,7 @@ import Login from './views/Login.vue'
 import Inicio from './views/Inicio.vue'
 import Teste from './views/Teste.vue'
 import Cadastro from './views/Cadastro.vue'
+import Acessorios from './views/Acessorios.vue'
 
 Vue.use(Router)
 
@@ -30,6 +31,11 @@ export default new Router({
       path: '/cadastro',
       name: 'cadastro',
       component: Cadastro
+    },
+    {
+      path: '/acessorios',
+      name: 'acessorios',
+      component: Acessorios
     }
   ]
 })
