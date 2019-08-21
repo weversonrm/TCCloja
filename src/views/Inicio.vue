@@ -1,48 +1,66 @@
-<template> 
-<div>
-  <v-toolbar>
-    <v-toolbar-side-icon></v-toolbar-side-icon>
-    <v-toolbar-title>Sunlight and Vegan</v-toolbar-title>
-    <v-spacer></v-spacer>
-    <v-toolbar-items class="hidden-sm-and-down">
-      <v-btn flat>
-        <template v-slot:badge>
-            <span></span>
-          </template>
-          <v-icon
-            color="grey lighten-1"
-          >shopping_cart</v-icon>
-      </v-btn>
-        <router-link to="/acessorios">
-          <v-chip>Acessorios</v-chip>
-        </router-link>
-     <v-btn flat>
-      <template v-slot:badge>
-        <v-icon
-          dark
-          small
-        >
-          done
-        </v-icon>
-      </template>
-        
-      <router-link to="/login">
-      <v-icon
-        color="grey lighten-1"
-    
-      >
-        account_circle
-      </v-icon>
-    </router-link>
-      </v-btn>      
-      <v-text-field
-        placeholder="Pesquisar"
-        append-icon="search"
-        class="hidden-sm-and-down"
-      ></v-text-field>     
-    </v-toolbar-items>
-  </v-toolbar>
-    <v-carousel hide-delimiters>
+<template>
+    <div id="app">
+        <v-app id="inspire" light>
+            <v-navigation-drawer clipped fixed v-model="drawer" app>
+                <v-list dense>
+                    <v-list-tile @click>
+                        <v-list-tile-action>
+                            <v-icon>dashboard</v-icon>
+                        </v-list-tile-action>
+                        <v-list-tile-content>
+                            <v-list-tile-title>Calçados</v-list-tile-title>
+                        </v-list-tile-content>
+                    </v-list-tile>
+                    <v-list-tile @click>
+                        <router-link to="/acessorios">
+                        <v-list-tile-action>
+                            <v-icon>dashboard</v-icon>
+                        </v-list-tile-action>
+                        </router-link>
+                        <router-link to="/acessorios">
+                        <v-list-tile-content>
+                            <v-list-tile-title>Acessorios</v-list-tile-title>
+                        </v-list-tile-content>
+                        </router-link>
+                    </v-list-tile>                        
+                </v-list>
+            </v-navigation-drawer>
+            <v-toolbar app fixed clipped-left>
+                <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+                <v-toolbar-title>application</v-toolbar-title>
+                    <v-spacer></v-spacer>
+                    <v-toolbar-items class="hidden-sm-and-down">
+                    <v-btn flat>
+                        <template v-slot:badge>
+                            <span></span>
+                        </template>
+                        <v-icon
+                            color="grey lighten-1"
+                        >shopping_cart</v-icon>
+                    </v-btn>
+                    <v-btn flat>
+                        <template v-slot:badge>
+                            <v-icon dark small>
+                            done
+                            </v-icon>
+                        </template>
+                    <router-link to="/login">
+                    <v-icon
+                        color="grey lighten-1"
+                    
+                    >
+                        account_circle
+                    </v-icon>
+                    </router-link>
+                    </v-btn>      
+                    <v-text-field
+                        placeholder="Pesquisar"
+                        append-icon="search"
+                        class="hidden-sm-and-down"
+                    ></v-text-field>     
+                    </v-toolbar-items>
+            </v-toolbar>
+            <v-carousel hide-delimiters>
     <v-carousel-item
       v-for="(item,i) in prodCarousel"
       :key="i"
@@ -102,6 +120,10 @@
       </v-hover>
     </v-flex>
   </v-layout>
+<v-footer app fixed>
+<span>&copy; 2019</span>
+</v-footer>
+</v-app>
 </div>
 </template>
 
@@ -115,11 +137,13 @@
   width: 100%;
 }
 </style>
+
 <script>
-  export default {
-    data () {
-      return {
-        show: true,
+export default {
+    data() {
+        return{
+            drawer: false,
+            show: true,
         prodCarousel:[
           {
             src: 'http://1.bp.blogspot.com/-QVgjKBbi_wc/UDjpOvXBXwI/AAAAAAAAAws/w4HJrWUPPGw/s1600/viagem+11.jpg',
@@ -134,7 +158,7 @@
             src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKoIJrAFrWhYCVdkqBtFATzHX8Gmkt-yl1rWAx1Q9ewawoAF3q'
           }
         ],
-        produtos: [
+         produtos: [
           {
             src: 'https://www.hypeness.com.br/wp-content/uploads/2015/07/modavegan18.jpg',
             preco: "R$ 10,00",
@@ -250,8 +274,8 @@
           }
           
         ]
-      }
+        }
     }
-  }
-
+}
 </script>
+
