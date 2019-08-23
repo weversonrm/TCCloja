@@ -5,6 +5,7 @@ import Inicio from './views/Inicio.vue'
 import Teste from './views/Teste.vue'
 import Cadastro from './views/Cadastro.vue'
 import Acessorios from './views/Acessorios.vue'
+import Calçados from './views/Calçados.vue'
 
 Vue.use(Router)
 
@@ -36,6 +37,11 @@ export default new Router({
       path: '/acessorios',
       name: 'acessorios',
       component: Acessorios
+    },
+    {
+      path: '/calçados',
+      name: 'calçados',
+      component: Calçados
     }
   ]
 })

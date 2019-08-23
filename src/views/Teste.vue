@@ -42,6 +42,7 @@
       ></v-text-field>     
     </v-toolbar-items>
   </v-toolbar>
+
     <v-carousel hide-delimiters>
     <v-carousel-item
       v-for="(item,i) in prodCarousel"
@@ -49,6 +50,27 @@
       :src="item.src"
     ></v-carousel-item>
   </v-carousel>
+  <br>
+    <v-bottom-sheet v-model="sheet">
+      <template v-slot:activator="{ on }">
+        <v-btn
+          color="purple"
+          dark
+          v-on="on"
+        >
+          Open Usage
+        </v-btn>
+      </template>
+      <v-sheet class="text-center" height="200px">
+        <v-btn
+          class="mt-6"
+          flat
+          color="red"
+          @click="sheet = !sheet"
+        >close</v-btn>
+        <div>The basic usage of v-bottom-sheet. Almost any content can be placed inside this component</div>
+      </v-sheet>
+    </v-bottom-sheet>
   <br>
   <v-layout align-end justify-space-around row fill-height mt-5 wrap>
     <v-flex xs3 px-2 mb-5 v-for="(produto,i) in produtos" :key="i">
@@ -119,6 +141,7 @@
   export default {
     data () {
       return {
+        sheet: false,
         show: true,
         prodCarousel:[
           {

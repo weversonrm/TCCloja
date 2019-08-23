@@ -1,88 +1,15 @@
 <template>
-    <div id="app">
-        <v-app id="inspire" light>
-            <v-navigation-drawer clipped fixed v-model="drawer" app>
-                <v-list dense>
-                    <v-list-tile @click>
-                      <router-link to="/calçados">
-                        <v-list-tile-action>
-                            <v-icon>dashboard</v-icon>
-                        </v-list-tile-action>
-                      </router-link>
-                      <router-link to="/calçados">
-                        <v-list-tile-content>
-                            <v-list-tile-title>Calçados</v-list-tile-title>
-                        </v-list-tile-content>
-                      </router-link>
-                    </v-list-tile>
-                    <v-list-tile @click>
-                        <router-link to="/acessorios">
-                        <v-list-tile-action>
-                            <v-icon>dashboard</v-icon>
-                        </v-list-tile-action>
-                        </router-link>
-                        <router-link to="/acessorios">
-                        <v-list-tile-content>
-                            <v-list-tile-title>Acessorios</v-list-tile-title>
-                        </v-list-tile-content>
-                        </router-link>
-                    </v-list-tile>                        
-                </v-list>
-            </v-navigation-drawer>
-            <v-toolbar app fixed clipped-left>
-                <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-                <v-toolbar-title class="flex display-1 font-weight-light">
-                  Sunset
-                </v-toolbar-title>
-                    <v-spacer></v-spacer>
-                    <v-toolbar-items class="hidden-sm-and-down">
-                    <v-btn flat>
-                        <template v-slot:badge>
-                            <span></span>
-                        </template>
-                        <v-icon
-                            color="grey lighten-1"
-                        >shopping_cart</v-icon>
-                    </v-btn>
-                    <v-btn flat>
-                        <template v-slot:badge>
-                            <span></span>
-                        </template>
-                        <v-icon
-                            color="grey lighten-1"
-                        >favorite</v-icon>
-                    </v-btn>
-                    <v-btn flat>
-                        <template v-slot:badge>
-                            <v-icon dark small>
-                            done
-                            </v-icon>
-                        </template>
-                    <router-link to="/login">
-                    <v-icon
-                        color="grey lighten-1"
-                    
-                    >
-                        account_circle
-                    </v-icon>
-                    </router-link>
-                    </v-btn>      
-                    <v-text-field
-                        placeholder="Pesquisar"
-                        append-icon="search"
-                        class="hidden-sm-and-down"
-                    ></v-text-field>     
-                    </v-toolbar-items>
-            </v-toolbar>
-            <v-carousel hide-delimiters>
-    <v-carousel-item
-      v-for="(item,i) in prodCarousel"
-      :key="i"
-      :src="item.src"
-    ></v-carousel-item>
-  </v-carousel>
-  <br>
-  <v-layout align-end justify-space-around row fill-height mt-5 wrap>
+    <div>
+    <v-toolbar
+      dark
+      prominent
+      src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
+    >
+      <v-app-bar-nav-icon></v-app-bar-nav-icon>
+      <v-toolbar-title>Calçados</v-toolbar-title>
+      <v-spacer></v-spacer>
+    </v-toolbar>
+     <v-layout align-end justify-space-around row fill-height mt-5 wrap>
     <v-flex xs3 px-2 mb-5 v-for="(produto,i) in produtos" :key="i">
       <v-hover class="hidden-sm-and-down">
         <v-card
@@ -133,44 +60,14 @@
       </v-hover>
     </v-flex>
   </v-layout>
-  <v-footer>
-    <div>&copy; 2019</div>
-  </v-footer>
-</v-app>
-</div>
+    
+    </div>
 </template>
-
-<style>
-.v-card--reveal {
-  align-items: center;
-  bottom: 0;
-  justify-content: center;
-  opacity: .5;
-  position: absolute;
-  width: 100%;
-}
-</style>
 
 <script>
 export default {
     data() {
         return{
-            drawer: false,
-            show: true,
-        prodCarousel:[
-          {
-            src: 'http://1.bp.blogspot.com/-QVgjKBbi_wc/UDjpOvXBXwI/AAAAAAAAAws/w4HJrWUPPGw/s1600/viagem+11.jpg',
-          },
-          {
-            src: 'https://vivagreen.com.br/wp-content/uploads/2016/08/tecidos-veganos-e1471951879868.jpg'
-          },
-          {
-            src: 'https://www.simbiotico.eco/wp-content/uploads/sv-eco-clothing.jpg'
-          },
-          {
-            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKoIJrAFrWhYCVdkqBtFATzHX8Gmkt-yl1rWAx1Q9ewawoAF3q'
-          }
-        ],
          produtos: [
           {
             src: 'https://www.hypeness.com.br/wp-content/uploads/2015/07/modavegan18.jpg',
