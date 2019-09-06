@@ -1,17 +1,82 @@
 <template>
-    <div>
-    <v-toolbar
-      dark
-      prominent
-      src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
-    >
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
-      <v-toolbar-title>Calçados</v-toolbar-title>
-      <v-spacer></v-spacer>
-    </v-toolbar>
+  <div id="app">
+    <v-app id="inspire" light>
+      <v-navigation-drawer clipped fixed v-model="drawer" app>
+                <v-list dense>
+                    <v-list-tile @click>
+                      <router-link to="/calçados">
+                        <v-list-tile-action>
+                            <v-icon>dashboard</v-icon>
+                        </v-list-tile-action>
+                      </router-link>
+                      <router-link to="/calçados">
+                        <v-list-tile-content>
+                            <v-list-tile-title>Calçados</v-list-tile-title>
+                        </v-list-tile-content>
+                      </router-link>
+                    </v-list-tile>
+                    <v-list-tile @click>
+                        <router-link to="/acessorios">
+                        <v-list-tile-action>
+                            <v-icon>dashboard</v-icon>
+                        </v-list-tile-action>
+                        </router-link>
+                        <router-link to="/acessorios">
+                        <v-list-tile-content>
+                            <v-list-tile-title>Acessorios</v-list-tile-title>
+                        </v-list-tile-content>
+                        </router-link>
+                    </v-list-tile>                        
+                </v-list>
+            </v-navigation-drawer>
+            <v-toolbar app fixed clipped-left>
+                <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+                <v-toolbar-title class="flex display-1 font-weight-light">
+                  Calçados
+                </v-toolbar-title>
+                    <v-spacer></v-spacer>
+                    <v-toolbar-items class="hidden-sm-and-down">
+                    <v-btn flat>
+                        <template v-slot:badge>
+                            <span></span>
+                        </template>
+                        <v-icon
+                            color="grey lighten-1"
+                        >shopping_cart</v-icon>
+                    </v-btn>
+                    <v-btn flat>
+                        <template v-slot:badge>
+                            <span></span>
+                        </template>
+                        <v-icon
+                            color="grey lighten-1"
+                        >favorite</v-icon>
+                    </v-btn>
+                    <v-btn flat>
+                        <template v-slot:badge>
+                            <v-icon dark small>
+                            done
+                            </v-icon>
+                        </template>
+                    <router-link to="/login">
+                    <v-icon
+                        color="grey lighten-1"
+                    
+                    >
+                        account_circle
+                    </v-icon>
+                    </router-link>
+                    </v-btn>      
+                    <v-text-field
+                        placeholder="Pesquisar"
+                        append-icon="search"
+                        class="hidden-sm-and-down"
+                    ></v-text-field>     
+                    </v-toolbar-items>
+            </v-toolbar>
      <v-layout align-end justify-space-around row fill-height mt-5 wrap>
-    <v-flex xs3 px-2 mb-5 v-for="(produto,i) in produtos" :key="i">
-      <v-hover class="hidden-sm-and-down">
+        <v-flex xs3 px-2 mb-5 v-for="(produto,i) in produtos" :key="i">
+        <v-hover class="hidden-sm-and-down">
         <v-card
           slot-scope="{ hover }"
           class="mx-auto"
@@ -60,6 +125,7 @@
       </v-hover>
     </v-flex>
   </v-layout>
+  </v-app>
     
     </div>
 </template>
@@ -68,118 +134,120 @@
 export default {
     data() {
         return{
-         produtos: [
+          drawer: false,
+          show: true,
+          produtos: [
           {
-            src: 'https://www.hypeness.com.br/wp-content/uploads/2015/07/modavegan18.jpg',
+            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPkOjHbXmebRkpeuk8jkFHnLTQNGFIAnR9jnebjE3vRqDS6Xmz',
             preco: "R$ 10,00",
             descricao: "",
-            marca: "Forever 21",
+            marca: "",
             informacao: ""
 
           },
           {
-            src: 'https://www.king55.com.br/estatico/king/images/temp/900_17960.jpeg',
+            src: 'https://risa.com.br/wp-content/uploads/2018/07/kera%C3%AD-cal%C3%A7ados-veganos.jpg',
             preco: "R$ 80,00",
             descricao: "",
-            marca: "king 55",
+            marca: "",
             informacao: ""
           },
           {
-            src: 'https://www.king55.com.br/estatico/king/images/temp/900_16958.jpeg',
+            src: 'http://www.mimiveg.com.br/wp-content/uploads/2018/07/calcados-veganos--740x357.jpg',
             preco: "R$ 90,00",
             descricao: "",
-            marca: "king 55",
+            marca: "",
             informacao: ""
           },
           {
-            src: 'https://www.king55.com.br/estatico/king/images/temp/900_18636.jpeg',
+            src: 'https://www.modaquerima.com.br/wp-content/uploads/2018/06/estudio-nh-nh-cal%C3%A7ados-veganos.png',
             preco: "R$ 70,00",
             descricao: "",
-            marca: "King 55",
+            marca: "",
             informacao: ""
           },
           {
-            src: 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRpPKsQVvTkyuM1HUVdH3JoEpDWHPSGjxWDpP5yL6b9YiHaWQsZvue5cWe6XHefNKhiDSj-qjm_Xx3LOyC-sBWss3-ZVq4oLQ&usqp=CAE',
+            src: 'https://www.modaquerima.com.br/wp-content/uploads/2018/06/cal%C3%A7ado-sapato-sandalia-vegano-urbann-flowers.png',
             preco: "R$ 270,00",
             descricao: "",
-            marca: "Forever 21",
+            marca: "",
             informacao: ""
           },
           {
-            src: 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRMuHshhfaAr5vRjkMbY3zVBcTpxvY0-Rzw2RzcxSXBPbqYx9Vn2gClh8KGwYH2apfHenL2Aqd28SYpblY9LT0IPUqzF4eQaOC3PdKFNCagiV_KYjwNqNYxEw&usqp=CAE',
+            src: 'https://www.modaquerima.com.br/wp-content/uploads/2018/06/CAL%C3%87ADOS-VEGANOS-USE-PAR.png',
             preco: "R$ 170,00",
             descricao: "",
-            marca: "Viva Green",
+            marca: "",
             informacao: ""
           },
           {
-            src: 'https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTs7gZHIBHYXl0rWWWFBC2E3pZCkyvNI4H3IKYXNC6eTaowo8g85NnJ3m2oeMVh9crC2bZmtWCpnJiTTX2F4kO_VuFZIx4TifYKro7VutWg9Vec3a038U-Dhg&usqp=CAE',
+            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpfGroGZ0GZV2r8Ts7MO5B1fyFIwZCddASH6gwN4eXPzAkH_e1yw',
             preco: "R$ 50,00",
             descricao: "",
-            marca: "Viva Green",
+            marca: "",
             informacao: ""
           },
           {
             src: 'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTGpn5vf9amOY0YVaYXV6G3KtVlfbsyO1DDMdJmGupwFrX9DstglqmcxRPDTY4HKwpta1ReHrNmbiV6Btv378qhA8-7EDPqLCQbJ5oy6XiyIeIA_ylAwbwqqQ&usqp=CAE',
             preco: "R$ 60,00",
             descricao: "",
-            marca: "Forever 21",
+            marca: "",
             informacao: ""
           },
           {
-            src: 'https://i.pinimg.com/474x/bf/f4/42/bff442999410181b58d967ec5e5c38ca.jpg',
+            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRN0EPXdmqYBEGtwCyCRBmeTm6A7d2uWLajT-zhcPDwjKIxKjJq',
             preco: "R$ 50,00",
             descricao: "",
-            marca: "V",
+            marca: "",
             informacao: ""
           },
           {
-            src: 'https://assets.xtechcommerce.com/uploads/images/thumbnails/121c67e2e0cb7cf100504ac2cd275568.jpg',
+            src: 'https://www.modaquerima.com.br/wp-content/uploads/2018/06/ahimsa-cal%C3%A7ados-tenis-vegano.png',
             preco: "R$ 85,00",
             descricao: "",
-            marca: "E",
+            marca: "",
             informacao: ""
           },
           {
-            src: 'https://res.cloudinary.com/amarotech/image/fetch/c_limit,f_auto,dpr_1,w_440,q_auto:best/v11553108149/https://cdn.amaro.com/images/products/20020160_047_original_1.jpg',
+            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIHActOmOE7r-yppXU4xV8wWt2Z3Ev-epzIiHMlqQjGFV2BMCZjA',
             preco: "R$ 79,00",
             descricao: "",
-            marca: "G",
+            marca: "",
             informacao: ""
           },
           {
-            src: 'https://www.freetheessence.com.br/lib/uploads/2016/08/pi%C3%B1atex.jpg',
+            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMbtA4PaRzufFIQQKTiBtEYm9LhoFQOyCVM7Q_d-cc7Cqt1fTl',
             preco: "R$ 1,00",
             descricao: "",
-            marca: "A",
+            marca: "",
             informacao: ""
           },
           {
-            src: 'https://vivagreen.com.br/wp-content/uploads/2016/08/tecidos-veganos-e1471951879868.jpg',
+            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNlGdbN11gr2LIZVrLgdd_N45bZDPaVkQGf7bdT9nByF4dHhTNvw',
             preco: "R$ 30,00",
             descricao: "",
-            marca: "N",
+            marca: "",
             informacao: ""
           },
           {
-            src: 'http://moda.atarde.uol.com.br/wp-content/uploads/2018/03/insecta-2.jpg',
+            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwut9YVj3bOheQxj40KY0K-jta3T5_3Cw9YXOnoeVDwgV2Km12qw',
             preco: "R$ 40,00",
             descricao: "",
-            marca: "O",
+            marca: "",
             informacao: ""
           },
           {
-            src: 'https://static.zattini.com.br/produtos/calca-pantalona-crepe/03/IGA-0145-203/IGA-0145-203_zoom1.jpg?resize=544:*',
+            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsOUpGdj0dCeUsqm7U9zTg3J72Gf_Lc6fADA5GUOCw5Ccxn31F_A',
             preco: "R$ 70,00",
             descricao: "",
-            marca: "Pantalona",
+            marca: "",
             informacao: ""
           },
           {
-            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC_5DYojZiTzrOx-s1qODP2VE2WGoYduRngqVBjTNTcWfso2dd',
+            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqZdUvkYX2AVHr6P7zrhQC1r-4PNGwbGB4Rd0uEKtpyLQyfNg8',
             preco: "R$ 80,00",
             descricao: "",
-            marca: "Panta louna",
+            marca: "",
             informacao: ""
           }
           
