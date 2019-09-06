@@ -26,18 +26,6 @@
                             <v-list-tile-title>Acessorios</v-list-tile-title>
                         </v-list-tile-content>
                         </router-link>
-                    </v-list-tile>
-                    <v-list-tile @click>
-                      <router-link to="/roupas">
-                        <v-list-tile-action>
-                            <v-icon>dashboard</v-icon>
-                        </v-list-tile-action>
-                      </router-link>
-                      <router-link to="/roupas">
-                        <v-list-tile-content>
-                            <v-list-tile-title>Roupas</v-list-tile-title>
-                        </v-list-tile-content>
-                      </router-link>
                     </v-list-tile>                        
                 </v-list>
             </v-navigation-drawer>
