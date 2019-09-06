@@ -3,41 +3,29 @@
         <v-app id="inspire" light>
             <v-navigation-drawer clipped fixed v-model="drawer" app>
                 <v-list dense>
-                    <v-list-tile @click>
-                      <router-link to="/calçados">
+                    <v-list-tile @click to="/calçados">
                         <v-list-tile-action>
                             <v-icon>dashboard</v-icon>
                         </v-list-tile-action>
-                      </router-link>
-                      <router-link to="/calçados">
-                        <v-list-tile-content>
+                        <v-list-tile-content to="/calçados">
                             <v-list-tile-title>Calçados</v-list-tile-title>
                         </v-list-tile-content>
-                      </router-link>
                     </v-list-tile>
-                    <v-list-tile @click>
-                        <router-link to="/acessorios">
+                    <v-list-tile @click to="/acessorios">
                         <v-list-tile-action>
                             <v-icon>dashboard</v-icon>
                         </v-list-tile-action>
-                        </router-link>
-                        <router-link to="/acessorios">
-                        <v-list-tile-content>
+                        <v-list-tile-content to="/acessorios">
                             <v-list-tile-title>Acessorios</v-list-tile-title>
                         </v-list-tile-content>
-                        </router-link>
                     </v-list-tile>
-                    <v-list-tile @click>
-                      <router-link to="/roupas">
+                    <v-list-tile @click to="/roupas">
                         <v-list-tile-action>
                             <v-icon>dashboard</v-icon>
                         </v-list-tile-action>
-                      </router-link>
-                      <router-link to="/roupas">
-                        <v-list-tile-content>
+                        <v-list-tile-content to="/roupas">
                             <v-list-tile-title>Roupas</v-list-tile-title>
                         </v-list-tile-content>
-                      </router-link>
                     </v-list-tile>                        
                 </v-list>
             </v-navigation-drawer>
@@ -64,20 +52,15 @@
                             color="grey lighten-1"
                         >favorite</v-icon>
                     </v-btn>
-                    <v-btn flat>
+                    <v-btn flat to="/login">
                         <template v-slot:badge>
                             <v-icon dark small>
                             done
                             </v-icon>
                         </template>
-                    <router-link to="/login">
-                    <v-icon
-                        color="grey lighten-1"
-                    
-                    >
+                    <v-icon color="grey lighten-1" to="/login">
                         account_circle
                     </v-icon>
-                    </router-link>
                     </v-btn>      
                     <v-text-field
                         placeholder="Pesquisar"

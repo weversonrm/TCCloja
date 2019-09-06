@@ -3,29 +3,21 @@
     <v-app id="inspire" light>
       <v-navigation-drawer clipped fixed v-model="drawer" app>
                 <v-list dense>
-                    <v-list-tile @click>
-                      <router-link to="/calçados">
+                    <v-list-tile @click to="/roupas">
                         <v-list-tile-action>
                             <v-icon>dashboard</v-icon>
                         </v-list-tile-action>
-                      </router-link>
-                      <router-link to="/calçados">
-                        <v-list-tile-content>
-                            <v-list-tile-title>Calçados</v-list-tile-title>
+                        <v-list-tile-content to="/roupas">
+                            <v-list-tile-title>Roupas</v-list-tile-title>
                         </v-list-tile-content>
-                      </router-link>
                     </v-list-tile>
-                    <v-list-tile @click>
-                        <router-link to="/acessorios">
+                    <v-list-tile @click to="/acessorios">
                         <v-list-tile-action>
                             <v-icon>dashboard</v-icon>
                         </v-list-tile-action>
-                        </router-link>
-                        <router-link to="/acessorios">
-                        <v-list-tile-content>
+                        <v-list-tile-content to="/acessorios">
                             <v-list-tile-title>Acessorios</v-list-tile-title>
                         </v-list-tile-content>
-                        </router-link>
                     </v-list-tile>                        
                 </v-list>
             </v-navigation-drawer>
@@ -52,20 +44,15 @@
                             color="grey lighten-1"
                         >favorite</v-icon>
                     </v-btn>
-                    <v-btn flat>
+                    <v-btn flat to="/login">
                         <template v-slot:badge>
                             <v-icon dark small>
                             done
                             </v-icon>
                         </template>
-                    <router-link to="/login">
-                    <v-icon
-                        color="grey lighten-1"
-                    
-                    >
+                    <v-icon to="/login" color="grey lighten-1">
                         account_circle
                     </v-icon>
-                    </router-link>
                     </v-btn>      
                     <v-text-field
                         placeholder="Pesquisar"
@@ -74,59 +61,66 @@
                     ></v-text-field>     
                     </v-toolbar-items>
             </v-toolbar>
-     <v-layout align-end justify-space-around row fill-height mt-5 wrap>
-        <v-flex xs3 px-2 mb-5 v-for="(produto,i) in produtos" :key="i">
-        <v-hover class="hidden-sm-and-down">
-        <v-card
-          slot-scope="{ hover }"
-          class="mx-auto"
-          color="grey lighten-4"
-          max-width="250"
-        >
-          <v-img
-            :aspect-ratio="16/9"
-            :src="produto.src"
-          >
-            <v-expand-transition>
-              <div
-                v-if="hover"
-                class="d-flex transition-fast-in-fast-out black darken-2 v-card--reveal display-1 white--text"
-                style="height: 100%;"
-              >
-                {{produto.preco}}
-              </div>
-            </v-expand-transition>
-          </v-img>
-          <v-card-text
-            class="pt-4"
-            style="position: relative;"
-          >
-            <v-btn 
-              absolute
-              class="white--text"
-              fab
-              large
-              right
-              top
-              >
-              <v-icon
-                large
-                color="grey lighten-1"
-              >shopping_cart</v-icon>
-              <v-icon>mdi-cart</v-icon>
-            </v-btn>
-            <div class="font-weight-light grey--text title mb-2">{{produto.descricao}}</div>
-            <h3 class="display-1 font-weight-light black--text mb-2">{{produto.marca}}</h3>
-            <div class="font-weight-light title mb-2">
-              {{produto.informacao}}
-            </div>
-          </v-card-text>
-        </v-card>
-      </v-hover>
-    </v-flex>
-  </v-layout>
-  </v-app>
-    
+            <v-carousel hide-delimiters>
+              <v-carousel-item
+                v-for="(item,i) in prodCarousel"
+                :key="i"
+                :src="item.src"
+              ></v-carousel-item>
+            </v-carousel>
+            <br>
+            <v-layout align-end justify-space-around row fill-height mt-5 wrap>
+                <v-flex xs3 px-2 mb-5 v-for="(produto,i) in produtos" :key="i">
+                <v-hover class="hidden-sm-and-down">
+                <v-card
+                  slot-scope="{ hover }"
+                  class="mx-auto"
+                  color="grey lighten-4"
+                  max-width="250"
+                >
+                  <v-img
+                    :aspect-ratio="16/9"
+                    :src="produto.src"
+                  >
+                    <v-expand-transition>
+                      <div
+                        v-if="hover"
+                        class="d-flex transition-fast-in-fast-out black darken-2 v-card--reveal display-1 white--text"
+                        style="height: 100%;"
+                      >
+                        {{produto.preco}}
+                      </div>
+                    </v-expand-transition>
+                  </v-img>
+                  <v-card-text
+                    class="pt-4"
+                    style="position: relative;"
+                  >
+                    <v-btn 
+                      absolute
+                      class="white--text"
+                      fab
+                      large
+                      right
+                      top
+                      >
+                      <v-icon
+                        large
+                        color="grey lighten-1"
+                      >shopping_cart</v-icon>
+                      <v-icon>mdi-cart</v-icon>
+                    </v-btn>
+                    <div class="font-weight-light grey--text title mb-2">{{produto.descricao}}</div>
+                    <h3 class="display-1 font-weight-light black--text mb-2">{{produto.marca}}</h3>
+                    <div class="font-weight-light title mb-2">
+                      {{produto.informacao}}
+                    </div>
+                  </v-card-text>
+                </v-card>
+              </v-hover>
+            </v-flex>
+          </v-layout>
+      </v-app>
     </div>
 </template>
 
@@ -136,6 +130,20 @@ export default {
         return{
           drawer: false,
           show: true,
+          prodCarousel:[
+          {
+            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL7mdVO7-WUUjxtW9Vqn2Xj3MRjrGWebI5pC0Z4TuToXWElLCL',
+          },
+          {
+            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO0ugGJWwf-6ffDAybItpAze0zhiPM1zxsXMzfcqSjBIeUUjH6zw'
+          },
+          {
+            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIP1zpBMyu5U0ad_PSGjyO6lGlXhrJqNzC79mpkinnqoylZ5sDug'
+          },
+          {
+            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFmhOPKre3Kwjy_tSMONLuEPH4u56tTyfd2MCFj1AaZKQZvByh'
+          }
+        ],
           produtos: [
           {
             src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPkOjHbXmebRkpeuk8jkFHnLTQNGFIAnR9jnebjE3vRqDS6Xmz',
