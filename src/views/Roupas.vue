@@ -18,21 +18,13 @@
                         <v-list-tile-content to="/acessorios">
                             <v-list-tile-title>Acessorios</v-list-tile-title>
                         </v-list-tile-content>
-                    </v-list-tile> 
-                    <v-list-tile @click to="/roupas">
-                        <v-list-tile-action>
-                            <v-icon>dashboard</v-icon>
-                        </v-list-tile-action>
-                        <v-list-tile-content to="/roupas">
-                            <v-list-tile-title>Roupas</v-list-tile-title>
-                        </v-list-tile-content>
-                    </v-list-tile>                                    
+                    </v-list-tile>                                     
                 </v-list>
             </v-navigation-drawer>
             <v-toolbar app fixed clipped-left>
                 <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
                 <v-toolbar-title class="flex display-1 font-weight-light">
-                  Sunset
+                  Roupas
                 </v-toolbar-title>
                     <v-spacer></v-spacer>
                     <v-toolbar-items class="hidden-sm-and-down">
@@ -51,21 +43,6 @@
                         <v-icon
                             color="grey lighten-1"
                         >favorite</v-icon>
-                    </v-btn>
-                    <v-btn flat>
-                        <template v-slot:badge>
-                            <v-icon dark small>
-                            done
-                            </v-icon>
-                        </template>
-                    <router-link to="/login">
-                    <v-icon
-                        color="grey lighten-1"
-                    
-                    >
-                        account_circle
-                    </v-icon>
-                    </router-link>
                     </v-btn>      
                     <v-text-field
                         placeholder="Pesquisar"
@@ -74,14 +51,6 @@
                     ></v-text-field>     
                     </v-toolbar-items>
             </v-toolbar>
-            <v-carousel hide-delimiters>
-    <v-carousel-item
-      v-for="(item,i) in prodCarousel"
-      :key="i"
-      :src="item.src"
-    ></v-carousel-item>
-  </v-carousel>
-  <br>
   <v-layout align-end justify-space-around row fill-height mt-5 wrap>
     <v-flex xs3 px-2 mb-5 v-for="(produto,i) in produtos" :key="i">
       <v-hover class="hidden-sm-and-down">
@@ -139,18 +108,6 @@
 </v-app>
 </div>
 </template>
-
-<style>
-.v-card--reveal {
-  align-items: center;
-  bottom: 0;
-  justify-content: center;
-  opacity: .5;
-  position: absolute;
-  width: 100%;
-}
-</style>
-
 <script>
 export default {
     data() {
