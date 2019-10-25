@@ -48,10 +48,6 @@ export default new Router({
       path: '/roupas',
       name: 'roupas',
       component: Roupas
-<<<<<<< HEAD
     },
-=======
-    }
->>>>>>> 4b481864aef225f956a6e89adf5d0f74b3233375
   ]
 })

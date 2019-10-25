@@ -18,11 +18,7 @@
                         <v-list-tile-content to="/acessorios">
                             <v-list-tile-title>Acessorios</v-list-tile-title>
                         </v-list-tile-content>
-<<<<<<< HEAD
                     </v-list-tile> 
-=======
-                    </v-list-tile>
->>>>>>> 4b481864aef225f956a6e89adf5d0f74b3233375
                     <v-list-tile @click to="/roupas">
                         <v-list-tile-action>
                             <v-icon>dashboard</v-icon>
@@ -30,11 +26,7 @@
                         <v-list-tile-content to="/roupas">
                             <v-list-tile-title>Roupas</v-list-tile-title>
                         </v-list-tile-content>
-<<<<<<< HEAD
                     </v-list-tile>                                    
-=======
-                    </v-list-tile>                        
->>>>>>> 4b481864aef225f956a6e89adf5d0f74b3233375
                 </v-list>
             </v-navigation-drawer>
             <v-toolbar app fixed clipped-left>
