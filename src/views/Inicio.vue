@@ -1,11 +1,16 @@
 <template>
     <div id="app">
         <v-app id="inspire" light>
-            <v-navigation-drawer clipped fixed v-model="drawer" app>
+            <v-navigation-drawer clipped fixed v-model="drawer" app :mini-variant.sync="mini">
                 <v-list dense>
+                  <v-list-tile>
+                    <v-list-tile-action>
+                      <v-icon @click.stop="mini = !mini">compare_arrows</v-icon>    
+                    </v-list-tile-action>
+                  </v-list-tile>
                     <v-list-tile @click to="/calçados">
                         <v-list-tile-action>
-                            <v-icon>dashboard</v-icon>
+                            <v-icon>spa</v-icon>
                         </v-list-tile-action>
                         <v-list-tile-content to="/calçados">
                             <v-list-tile-title>Calçados</v-list-tile-title>
@@ -13,7 +18,7 @@
                     </v-list-tile>
                     <v-list-tile @click to="/acessorios">
                         <v-list-tile-action>
-                            <v-icon>dashboard</v-icon>
+                            <v-icon>watch</v-icon>
                         </v-list-tile-action>
                         <v-list-tile-content to="/acessorios">
                             <v-list-tile-title>Acessorios</v-list-tile-title>
@@ -21,7 +26,7 @@
                     </v-list-tile> 
                     <v-list-tile @click to="/roupas">
                         <v-list-tile-action>
-                            <v-icon>dashboard</v-icon>
+                            <v-icon>whatshot</v-icon>
                         </v-list-tile-action>
                         <v-list-tile-content to="/roupas">
                             <v-list-tile-title>Roupas</v-list-tile-title>
@@ -35,39 +40,23 @@
                   Sunset
                 </v-toolbar-title>
                     <v-spacer></v-spacer>
-                    <v-toolbar-items class="hidden-sm-and-down">
+                  <v-toolbar-items class="hidden-sm-and-down">
                     <v-btn flat>
-                        <template v-slot:badge>
-                            <span></span>
-                        </template>
-                        <v-icon
-                            color="grey lighten-1"
-                        >shopping_cart</v-icon>
+                      <v-icon color="grey lighten-1">
+                        shopping_cart
+                      </v-icon>
                     </v-btn>
                     <v-btn flat>
-                        <template v-slot:badge>
-                            <span></span>
-                        </template>
-                        <v-icon
-                            color="grey lighten-1"
-                        >favorite</v-icon>
+                      <v-icon color="grey lighten-1">favorite</v-icon>
                     </v-btn>
-                    <v-btn flat to="/login">
-                        <template v-slot:badge>
-                            <v-icon dark small>
-                            done
-                            </v-icon>
-                        </template>
-                    <v-icon color="grey lighten-1" to="/login">
-                        account_circle
+                    <v-btn flat to="/usuario">
+                    <v-icon color="grey lighten-1">
+                        person_pin
                     </v-icon>
                     </v-btn>      
-                    <v-text-field
-                        placeholder="Pesquisar"
-                        append-icon="search"
-                        class="hidden-sm-and-down"
-                    ></v-text-field>     
-                    </v-toolbar-items>
+                    <v-text-field append-icon="search" class="hidden-sm-and-down">
+                    </v-text-field>     
+                  </v-toolbar-items>
             </v-toolbar>
             <v-carousel hide-delimiters>
     <v-carousel-item
@@ -104,20 +93,11 @@
             class="pt-4"
             style="position: relative;"
           >
-            <v-btn 
-              absolute
-              class="white--text"
-              fab
-              large
-              right
-              top
-              >
-              <v-icon
-                large
-                color="grey lighten-1"
-              >shopping_cart</v-icon>
-              <v-icon>mdi-cart</v-icon>
-            </v-btn>
+          <v-btn absolute class="white--text" fab large right top v-model="produto.Icon">
+              <v-icon large color="grey lighten-1" @click="produto.Icon = !produto.Icon">
+                {{produto.Icon}}
+                </v-icon>           
+          </v-btn>
             <div class="font-weight-light grey--text title mb-2">{{produto.descricao}}</div>
             <h3 class="display-1 font-weight-light black--text mb-2">{{produto.marca}}</h3>
             <div class="font-weight-light title mb-2">
@@ -152,6 +132,8 @@ export default {
         return{
             drawer: false,
             show: true,
+            produtoIcon: false,
+            mini: true,
         prodCarousel:[
           {
             src: 'http://1.bp.blogspot.com/-QVgjKBbi_wc/UDjpOvXBXwI/AAAAAAAAAws/w4HJrWUPPGw/s1600/viagem+11.jpg',
@@ -172,7 +154,8 @@ export default {
             preco: "R$ 10,00",
             descricao: "",
             marca: "Forever 21",
-            informacao: ""
+            informacao: "",
+            Icon: 'shopping_cart'
 
           },
           {
@@ -180,107 +163,121 @@ export default {
             preco: "R$ 80,00",
             descricao: "",
             marca: "king 55",
-            informacao: ""
+            informacao: "",
+            Icon: 'shopping_cart'
           },
           {
             src: 'https://www.king55.com.br/estatico/king/images/temp/900_16958.jpeg',
             preco: "R$ 90,00",
             descricao: "",
             marca: "king 55",
-            informacao: ""
+            informacao: "",
+            Icon: 'shopping_cart'
           },
           {
             src: 'https://www.king55.com.br/estatico/king/images/temp/900_18636.jpeg',
             preco: "R$ 70,00",
             descricao: "",
             marca: "King 55",
-            informacao: ""
+            informacao: "",
+            Icon: 'shopping_cart'
           },
           {
             src: 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRpPKsQVvTkyuM1HUVdH3JoEpDWHPSGjxWDpP5yL6b9YiHaWQsZvue5cWe6XHefNKhiDSj-qjm_Xx3LOyC-sBWss3-ZVq4oLQ&usqp=CAE',
             preco: "R$ 270,00",
             descricao: "",
             marca: "Forever 21",
-            informacao: ""
+            informacao: "",
+            Icon: 'shopping_cart'
           },
           {
             src: 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRMuHshhfaAr5vRjkMbY3zVBcTpxvY0-Rzw2RzcxSXBPbqYx9Vn2gClh8KGwYH2apfHenL2Aqd28SYpblY9LT0IPUqzF4eQaOC3PdKFNCagiV_KYjwNqNYxEw&usqp=CAE',
             preco: "R$ 170,00",
             descricao: "",
             marca: "Viva Green",
-            informacao: ""
+            informacao: "",
+            Icon: 'shopping_cart'
           },
           {
             src: 'https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTs7gZHIBHYXl0rWWWFBC2E3pZCkyvNI4H3IKYXNC6eTaowo8g85NnJ3m2oeMVh9crC2bZmtWCpnJiTTX2F4kO_VuFZIx4TifYKro7VutWg9Vec3a038U-Dhg&usqp=CAE',
             preco: "R$ 50,00",
             descricao: "",
             marca: "Viva Green",
-            informacao: ""
+            informacao: "",
+            Icon: 'shopping_cart'
           },
           {
             src: 'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTGpn5vf9amOY0YVaYXV6G3KtVlfbsyO1DDMdJmGupwFrX9DstglqmcxRPDTY4HKwpta1ReHrNmbiV6Btv378qhA8-7EDPqLCQbJ5oy6XiyIeIA_ylAwbwqqQ&usqp=CAE',
             preco: "R$ 60,00",
             descricao: "",
             marca: "Forever 21",
-            informacao: ""
+            informacao: "",
+            Icon: 'shopping_cart'
           },
           {
             src: 'https://i.pinimg.com/474x/bf/f4/42/bff442999410181b58d967ec5e5c38ca.jpg',
             preco: "R$ 50,00",
             descricao: "",
             marca: "V",
-            informacao: ""
+            informacao: "",
+            Icon: 'shopping_cart'
           },
           {
             src: 'https://assets.xtechcommerce.com/uploads/images/thumbnails/121c67e2e0cb7cf100504ac2cd275568.jpg',
             preco: "R$ 85,00",
             descricao: "",
             marca: "E",
-            informacao: ""
+            informacao: "",
+            Icon: 'shopping_cart'
           },
           {
             src: 'https://res.cloudinary.com/amarotech/image/fetch/c_limit,f_auto,dpr_1,w_440,q_auto:best/v11553108149/https://cdn.amaro.com/images/products/20020160_047_original_1.jpg',
             preco: "R$ 79,00",
             descricao: "",
             marca: "G",
-            informacao: ""
+            informacao: "",
+            Icon: 'shopping_cart'
           },
           {
             src: 'https://www.freetheessence.com.br/lib/uploads/2016/08/pi%C3%B1atex.jpg',
             preco: "R$ 1,00",
             descricao: "",
             marca: "A",
-            informacao: ""
+            informacao: "",
+            Icon: 'shopping_cart'
           },
           {
             src: 'https://vivagreen.com.br/wp-content/uploads/2016/08/tecidos-veganos-e1471951879868.jpg',
             preco: "R$ 30,00",
             descricao: "",
             marca: "N",
-            informacao: ""
+            informacao: "",
+            Icon: 'shopping_cart'
           },
           {
             src: 'http://moda.atarde.uol.com.br/wp-content/uploads/2018/03/insecta-2.jpg',
             preco: "R$ 40,00",
             descricao: "",
             marca: "O",
-            informacao: ""
+            informacao: "",
+            Icon: 'shopping_cart'
           },
           {
             src: 'https://static.zattini.com.br/produtos/calca-pantalona-crepe/03/IGA-0145-203/IGA-0145-203_zoom1.jpg?resize=544:*',
             preco: "R$ 70,00",
             descricao: "",
             marca: "Pantalona",
-            informacao: ""
+            informacao: "",
+            Icon: 'shopping_cart'
           },
           {
             src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRC_5DYojZiTzrOx-s1qODP2VE2WGoYduRngqVBjTNTcWfso2dd',
             preco: "R$ 80,00",
             descricao: "",
             marca: "Panta louna",
-            informacao: ""
-          }
-          
+            informacao: "",
+            Icon: 'shopping_cart'
+          },
         ]
         }
     }

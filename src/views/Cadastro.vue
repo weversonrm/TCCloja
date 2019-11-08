@@ -11,81 +11,55 @@
     </v-toolbar>
   <v-layout align-center justify-center row fill-height mt-5 >
     <v-flex xs4 class="display-2 text-xs-center black--text pa-3">
+      <span class="font-weight-light">
+        Entrar
+      </span>
+      /
+      <span>Cadastrar</span>
+    <v-form ref="form" v-model="valid" lazy-validation>
+    <v-text-field v-model="name" :counter="30" :rules="nameRules" label="Name" required> 
+    </v-text-field>
+    <v-text-field v-model="email" :rules="emailRules" label="E-mail" required> 
+    </v-text-field>
+    <v-text-field v-model="senha" label="Senha" type="password" required>
+    </v-text-field>
+    <v-btn color="secondary" to="/inicio">
+      <v-icon>rowing</v-icon>
       Cadastrar
-
-    <v-form
-    ref="form"
-    v-model="valid"
-    >
-    <v-text-field
-    v-model="name"
-    :counter="10"
-    :rules="nameRules"
-    label="Name"
-    required
-    ></v-text-field>
-        
-    <v-text-field
-    v-model="email"
-    :rules="emailRules"
-    label="E-mail"
-    required
-    ></v-text-field>
-    <v-text-field
-    v-model="senha"
-    label="senha"
-    type="password"
-    required
-    ></v-text-field>
-    <v-btn block color="secondary" dark to="/inicio">
-     Cadastrar
     </v-btn>
-    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-    </fb:login-button>
-
-    <div id="status">
-    </div>
-    </v-form>
+    <v-btn color="secondary" to="/login">
+      Já é cadastrado
+      <v-icon>error_outline</v-icon>
+    </v-btn>
+  </v-form>
     </v-flex>
     </v-layout>
     </div>
 </template>
+
 <script>
-        export default {
-          data: () => ({
-            valid: true,
-            name: '',
-            nameRules: [
-              v => !!v || 'Name is required',
-              v => (v && v.length <= 10) || 'Name must be less than 10 characters'
-            ],
-            email: '',
-            emailRules: [
-              v => !!v || 'E-mail is required',
-              v => /.+@.+/.test(v) || 'E-mail must be valid'
-            ],
-            select: null,
-            items: [
-              'Item 1',
-              'Item 2',
-              'Item 3',
-              'Item 4'
-            ],
-            checkbox: false
-          }),
-      
-          methods: {
-            validate () {
-              if (this.$refs.form.validate()) {
-                this.snackbar = true
-              }
-            },
-            reset () {
-              this.$refs.form.reset()
-            },
-            resetValidation () {
-              this.$refs.form.resetValidation()
-            }
-          }
-        }  
-      </script>
+  export default {
+    data: () => ({
+      valid: true,
+      name: '',
+      nameRules: [
+        v => !!v || 'Precisamos do seu nome',
+        v => (v && v.length <= 30) || 'Perdão, apenas 30 caracteres',
+      ],
+        email: '',
+        emailRules: [
+          v => !!v || 'Por obséquio, digite o E-mail corretamente',
+          v => /.+@.+\..+/.test(v) || 'E-mail não é valido',
+      ],
+        checkbox: false
+      }),
+      methods: {
+        navigateTo(where){
+          this.$router.push({name: where})
+        },
+        reset () {
+        this.$refs.form.reset()
+      },
+    },
+    }
+</script>
