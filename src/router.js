@@ -9,6 +9,7 @@ import Calçados from './views/Calçados.vue'
 import Roupas from './views/Roupas.vue'
 import Usuario from './views/Usuario.vue'
 import Vegas from './views/Vegas.vue'
+import nada from './views/nada.vue'
 
 Vue.use(Router)
 
@@ -60,6 +61,11 @@ export default new Router({
       path: '/vegas',
       name: '/vegas',
       component: Vegas
+    },
+    {
+      path: '/nada',
+      name: '/nada',
+      component: nada
     },
   ]
 })

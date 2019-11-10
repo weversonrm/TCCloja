@@ -20,10 +20,10 @@
                 </v-toolbar-title>
                 <v-spacer></v-spacer>
                 <v-toolbar-items class="hidden-sm-and-down">
-                  <v-dialog v-model="dialog" width="600px">
+                  <v-dialog v-model="snackbar" width="600px">
                     <template v-slot:activator="{ on }">
-                      <v-btn dark v-on="on" icon>
-                          <v-icon color="grey lighten-1">pets</v-icon>
+                      <v-btn dark v-on="on" icon @click="snackbar = true">
+                          <v-icon color="grey lighten-1">add</v-icon>
                       </v-btn>
                     </template>
                     <v-card>
@@ -110,6 +110,7 @@
     data: () => ({
           drawer: false,
           show: true,
+          snackbar: false,
           events: [],
       input: null,
       nonce: 0,
