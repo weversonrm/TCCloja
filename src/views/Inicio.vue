@@ -108,8 +108,9 @@
                         person_pin
                     </v-icon>
                     </v-btn>      
-                    <v-text-field append-icon="search" class="hidden-sm-and-down">
-                    </v-text-field>     
+                    <v-autocomplete :items="components" color="dark" hide-no-data hide-selected 
+                    placeholder="Pesquisar...." append-icon="search" class="hidden-sm-and-down" return-object>
+                    </v-autocomplete>     
                   </v-toolbar-items>
             </v-toolbar>
             <v-carousel hide-delimiters>
@@ -189,6 +190,9 @@ export default {
             produtoIcon: false,
             mini: true,
             dialog: false,
+            components: [
+            'Pipa','Silvio Santos','Netflix','Celular','Peppa Pig','Roupa',
+            ],
         prodCarousel:[
           {
             src: 'http://1.bp.blogspot.com/-QVgjKBbi_wc/UDjpOvXBXwI/AAAAAAAAAws/w4HJrWUPPGw/s1600/viagem+11.jpg',
