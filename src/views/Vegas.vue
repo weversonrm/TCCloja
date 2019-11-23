@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <v-app id="inspire" dark>
+    <v-app id="inspire" light>
       <v-navigation-drawer clipped fixed v-model="drawer" app>
                 <v-list dense>
                     <v-list-tile @click to="/inicio">
@@ -43,7 +43,8 @@
                           </v-text-field>
                         </v-timeline-item>
                         <v-slide-x-transition group>
-                          <v-timeline-item v-for="event in timeline" :key="event.id" class="mb-4" color="pink" small>
+                          <v-timeline-item v-for="event in timeline" :key="event.id" class="mb-4" 
+                          color="pink" small>
                             <v-row justify="space-between">
                               <v-col cols="7" v-text="event.text"></v-col>
                               <v-col class="text-right" cols="5" v-text="event.time"></v-col>
@@ -91,7 +92,7 @@
                             <v-col cols="7">
                               John Wick é vegano.
                             </v-col>
-                            <v-col class="text-right" cols="5">15:00 Editado</v-col>
+                            <v-col  cols="5">15:00 Editado</v-col>
                           </v-row>
                         </v-timeline-item>
                         </v-timeline>
@@ -100,18 +101,38 @@
                   </v-dialog>
                 </v-toolbar-items>
             </v-toolbar>
-     <v-layout align-end justify-space-around row fill-height mt-5 wrap>
-    </v-layout>
-  </v-app> 
-</div>
+            <br>
+            <h1 class="text-right">Dia Mundial do Veganismo </h1>
+            <br>
+              <v-sheet height="500">
+                <v-calendar type="month" now="2019-11-01" value="2019-11-01">
+                </v-calendar>
+              </v-sheet>
+             <v-card flat>
+              <v-card-text>
+                <p>
+                  O Dia Mundia Vegano foi estabelecido em 1994 por Louise Wallis, então presidente da Vegan Society da Inglaterra, a instituição vegana mais antiga do mundo, a que oficializou e cunhou o termo “vegano”. Louise estabeleceu que todo dia 1º de novembro seria comemorado o Dia Mundial Vegano justamente no aniversário de 50 anos da Vegan Society, criada em 1944
+                </p>
+                <p>
+                  O veganismo não é uma dieta, e sim o conjunto de ações em todos os aspectos da vida que demonstra recusa ao sofrimento dos animais. Os veganos, como são chamados os que praticam o veganismo, têm uma alimentação vegetariana, ou seja, nada de origem animal entra no cardápio. Isso inclui todos os tipos de carnes, todos os laticínios, ovos, mel e tudo que tenha em sua origem o sofrimento de algum animal. Nenhum produto de origem animal é livre de sofrimento e é por isso que os veganos não os consomem.
+                </p>
+                <p>
+                  Pode parecer complicado a quem ouve falar nisso pela primeira vez, mas com um pouco de boa vontade, pesquisa e foco nas vítimas (os animais), qualquer pessoa pode se tornar vegana. Não há limitação de classe social, gênero ou idade. Basta que haja informação e vontade.
+                </p>
+              </v-card-text>
+            </v-card>
+    </v-app>
+  </div>
 </template>
 <script>
   export default {
     data: () => ({
-          drawer: false,
-          show: true,
-          snackbar: false,
-          events: [],
+      length: 3,
+      window: 0,
+      show: false,
+      drawer: false,
+      snackbar: false,
+      events: [],
       input: null,
       nonce: 0,
     }),

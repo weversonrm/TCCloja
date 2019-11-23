@@ -137,15 +137,20 @@
                 {{produto.preco}}
               </div>
             </v-expand-transition>
+            <v-chip>
+              <v-icon>
+                favorite_border
+              </v-icon>
+            </v-chip>
           </v-img>
           <v-card-text
             class="pt-4"
             style="position: relative;"
           >
-          <v-btn absolute class="white--text" fab large right top v-model="produto.Icon">
-              <v-icon large color="grey lighten-1" @click="produto.Icon = !produto.Icon">
-                {{produto.Icon}}
-                </v-icon>           
+          <v-btn absolute class="white--text" fab large right top>
+              <v-icon large color="grey lighten-1">
+                shopping_cart
+              </v-icon>           
           </v-btn>
             <div class="font-weight-light grey--text title mb-2">{{produto.descricao}}</div>
             <h3 class="display-1 font-weight-light black--text mb-2">{{produto.marca}}</h3>
@@ -172,16 +177,16 @@ export default {
           produtoIcon: false,
         prodCarousel:[
           {
-            src: 'http://1.bp.blogspot.com/-QVgjKBbi_wc/UDjpOvXBXwI/AAAAAAAAAws/w4HJrWUPPGw/s1600/viagem+11.jpg',
+            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMe52xETi5YXZYPaLeP03EdxgkQmWCSAMc6Kyc5EW2t5t8egJw',
           },
           {
-            src: 'https://vivagreen.com.br/wp-content/uploads/2016/08/tecidos-veganos-e1471951879868.jpg'
+            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRpJIZCGWKxNmJblUcHKojWpw3z1zJMv4Eozgv0Lir7Sx90rggT'
           },
           {
-            src: 'https://www.simbiotico.eco/wp-content/uploads/sv-eco-clothing.jpg'
+            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSeq6EKMaIti2Npc2bVQHsbgCTb-8w2jYQieJEtldAeNjBHt7DI'
           },
           {
-            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKoIJrAFrWhYCVdkqBtFATzHX8Gmkt-yl1rWAx1Q9ewawoAF3q'
+            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTRQZlekRu8eccNg2rmMb4tgNaav4rZlrG7fwkInlWFNhakuGpQ'
           }
         ],
           produtos: [
@@ -190,129 +195,112 @@ export default {
             preco: "R$ 10,00",
             descricao: "",
             marca: "",
-            informacao: "",
-            Icon: 'shopping_cart'
-
+            informacao: ""
           },
           {
             src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmqMziQ0vcz_Q_oF9D07p-uo0_5VFmyGjyl5uFmS-5P3jKRZZ1',
             preco: "R$ 80,00",
             descricao: "",
             marca: "",
-            informacao: "",
-            Icon: 'shopping_cart'
+            informacao: ""
           },
           {
             src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2iodmeYvrClbtyOU0iHRQ-bYCcqPC-q1n9R1kAOjEtZcjQTJsXg',
             preco: "R$ 90,00",
             descricao: "",
             marca: "",
-            informacao: "",
-            Icon: 'shopping_cart'
+            informacao: ""
           },
           {
             src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0NTCz8EKAa7BNCHQ7nATGGJNJ10e4k1EcMj1Szyxj8icFvWT8GA',
             preco: "R$ 70,00",
             descricao: "",
             marca: "",
-            informacao: "",
-            Icon: 'shopping_cart'
+            informacao: ""
           },
           {
             src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYS_MBjSltQUyJ8UdBd47zhzk_rABHgrYdL-4Gn53SOsSqxPDdfQ',
             preco: "R$ 270,00",
             descricao: "",
             marca: "",
-            informacao: "",
-            Icon: 'shopping_cart'
+            informacao: ""
           },
           {
             src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNW-DM9TK-rUv9EN521Dx8zd0FMyGQyhcVmOQb-0KsI32JlbGpDg',
             preco: "R$ 170,00",
             descricao: "",
             marca: "",
-            informacao: "",
-            Icon: 'shopping_cart'
+            informacao: ""
           },
           {
             src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhbKSDg_GlRUHwke9SMUnqZLuQ8Ylfjt--5CHc0om7wiq6iVer',
             preco: "R$ 50,00",
             descricao: "",
             marca: "",
-            informacao: "",
-            Icon: 'shopping_cart'
+            informacao: ""
           },
           {
             src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeqDvhRI9KPbkeWy7IT5bjTFPsGlXfydI7pBWTQxJlhmNdMyjQ',
             preco: "R$ 60,00",
             descricao: "",
             marca: "",
-            informacao: "",
-            Icon: 'shopping_cart'
+            informacao: ""
           },
           {
             src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThRFXzr00ljsesrWQo37KRXFyaQeRccUfB8QGZVfkmmCtlkVaIWg',
             preco: "R$ 50,00",
             descricao: "",
             marca: "",
-            informacao: "",
-            Icon: 'shopping_cart'
+            informacao: ""
           },
           {
             src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdc0d4YaIQhyUwxp-TKyDpdUmsSkCPk9u3NMaOQQeRE1vriWlbDQ',
             preco: "R$ 85,00",
             descricao: "",
             marca: "",
-            informacao: "",
-            Icon: 'shopping_cart'
+            informacao: ""
           },
           {
             src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwXfgwMW5vXn_AAobtHJ0UQYRQzrMGmzbO2LkZsA60gBRVNatR',
             preco: "R$ 79,00",
             descricao: "",
             marca: "",
-            informacao: "",
-            Icon: 'shopping_cart'
+            informacao: ""
           },
           {
             src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjoDFm6wmwaChAv2FfmPKJKOaoulo9OiRoG73XgTLrr45DtNPZ',
             preco: "R$ 1,00",
             descricao: "",
             marca: "",
-            informacao: "",
-            Icon: 'shopping_cart'
+            informacao: ""
           },
           {
-            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3mS6sxVjEk3JJ2vfycD07HTBDgq4RcxK9RlfIbQMQEi0JVACuAA',
+            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSqX2GD0Wwd8b6MOrJXMqv6Kt1kK8yK_0V6RLXp5-xYdnUjR7W1',
             preco: "R$ 30,00",
             descricao: "",
             marca: "",
-            informacao: "",
-            Icon: 'shopping_cart'
+            informacao: ""
           },
           {
-            src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsUZZCmW-Wtw5yzAO1endAWvNh8NpXA9AV1GqE8FXV52EsDy_fgw',
+            src: 'http://www.mimiveg.com.br/wp-content/uploads/2019/04/moda-vegana-de-luxo-capa-740x357.jpg',
             preco: "R$ 40,00",
             descricao: "",
             marca: "",
-            informacao: "",
-            Icon: 'shopping_cart'
+            informacao: ""
           },
           {
-            src: '',
+            src: 'https://assets.xtechcommerce.com/uploads/images/medium/f67e96497f4ac8d0be92b9a5f1ef5543.jpg',
             preco: "R$ 70,00",
-            descricao: "",
-            marca: "",
-            informacao: "",
-            Icon: 'shopping_cart'
+            descricao: "Necessaire ",
+            marca: "Maduu",
+            informacao: ""
           },
           {
-            src: '',
+            src: 'https://assets.xtechcommerce.com/uploads/images/medium/93fb8496430a2c28e6a9de66b59450fc.jpg',
             preco: "R$ 80,00",
-            descricao: "",
-            marca: "",
-            informacao: "",
-            Icon: 'shopping_cart'
+            descricao: "Chaveiro Pompom",
+            marca: "Maduu",
+            informacao: ""
           }
           
         ]
